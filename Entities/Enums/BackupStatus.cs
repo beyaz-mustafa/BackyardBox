@@ -10,6 +10,7 @@ namespace Entities.Enums
     {
         SyncInProgress,
         SyncCompleted,
-        SyncFailed
+        SyncFailed,
+        None
     }
 }
