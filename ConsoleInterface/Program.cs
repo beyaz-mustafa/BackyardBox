@@ -1,10 +1,14 @@
-﻿namespace ConsoleInterface
+﻿using ConsoleInterface.Configuration;
+
+namespace ConsoleInterface
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            ConfigValidator.ValidateAppDirectory();
+            ConfigValidator.ValidateAppConfig();
+            ConfigValidator.ValidateUserConfig();
         }
     }
 }
