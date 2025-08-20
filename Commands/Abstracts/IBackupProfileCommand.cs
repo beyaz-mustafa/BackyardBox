@@ -1,6 +1,6 @@
 ﻿using Entities.Models;
 
-namespace CLI.Commands.Abstracts
+namespace Commands.Abstracts
 {
     public interface IBackupProfileCommand : ICommand<BackupProfile>
     {

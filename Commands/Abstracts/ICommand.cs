@@ -1,4 +1,4 @@
-﻿namespace CLI.Commands.Abstracts
+﻿namespace Commands.Abstracts
 {
     public interface ICommand<T>
     {

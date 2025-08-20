@@ -1,7 +1,7 @@
-﻿using CLI.Commands.Abstracts;
+﻿using Commands.Abstracts;
 using Entities.Models;
 
-namespace CLI.Commands.Concretes
+namespace Commands.Concretes
 {
     public class BackupProfileCommand : IBackupProfileCommand
     {
