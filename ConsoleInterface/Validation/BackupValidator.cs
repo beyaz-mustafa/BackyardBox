@@ -1,4 +1,4 @@
-﻿namespace ConsoleInterface.Configuration
+﻿namespace ConsoleInterface.Validation
 {
     public static class BackupValidator
     {

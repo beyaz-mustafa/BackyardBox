@@ -1,4 +1,4 @@
-﻿using ConsoleInterface.Configuration;
+﻿using ConsoleInterface.Validation;
 
 namespace ConsoleInterface
 {
