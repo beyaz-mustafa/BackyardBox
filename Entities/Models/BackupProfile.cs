@@ -10,7 +10,7 @@ namespace Entities.Models
             Status = BackupStatus.None;
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string? Alias { get; set; }
         public int MaxSaves { get; set; }
         public List<Backup> Backups { get; set; } = new List<Backup>();

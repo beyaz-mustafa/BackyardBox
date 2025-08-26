@@ -8,7 +8,7 @@
             Backup = backup;
             //Id = UniqueIdGeneratorMethod();
         }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Path { get; set; }
         public Backup Backup { get; set; }
     }
