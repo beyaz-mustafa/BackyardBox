@@ -9,6 +9,10 @@ namespace ConsoleInterface
             ConfigValidator.ValidateAppDirectory();
             ConfigValidator.ValidateAppConfig();
             ConfigValidator.ValidateUserConfig();
+
+            BackupValidator.ValidateBackupFolder();
+            // if profiles exists, start sync
+            //bool exists = BackupValidator.CheckExistingProfiles();
         }
     }
 }

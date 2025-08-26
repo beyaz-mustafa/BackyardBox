@@ -2,19 +2,17 @@
 {
     public static class BackupValidator
     {
-        // Get <username>/appdata/local path
-        // Replace '\' with '/'
-        // Append app's folder name
         public static readonly string appPath = Environment
             .GetFolderPath(Environment.SpecialFolder.LocalApplicationData)
-            .Replace('\\', '/') + "/BackyarBox";
+            + "\\BackyarBox";
 
         public static void ValidateBackupFolder()
         {
-            if (!Directory.Exists(appPath+"/profiles"))
-            {
-                Directory.CreateDirectory(appPath + "/profiles");
-            }
+            Directory.CreateDirectory(appPath + "\\Profiles");
+        }
+        public static bool CheckExistingProfiles()
+        {
+            return Directory.GetFiles(appPath + "\\Profiles").Length > 1 ? true : false;
         }
     }
 }
