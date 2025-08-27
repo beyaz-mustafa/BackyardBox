@@ -5,9 +5,11 @@ VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{95DE3BD9-A587-35A9-17E0-3C34D2A57441}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commands", "Commands\Commands.csproj", "{946C372F-1463-01F5-14DA-5DD05B590145}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{946C372F-1463-01F5-14DA-5DD05B590145}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleInterface", "ConsoleInterface\ConsoleInterface.csproj", "{9A800AFB-3DDD-4270-9EDB-5253F2BCB87C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{E2C3119B-70BA-41C4-935F-91A0E4A954B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9A800AFB-3DDD-4270-9EDB-5253F2BCB87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A800AFB-3DDD-4270-9EDB-5253F2BCB87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A800AFB-3DDD-4270-9EDB-5253F2BCB87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C3119B-70BA-41C4-935F-91A0E4A954B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C3119B-70BA-41C4-935F-91A0E4A954B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C3119B-70BA-41C4-935F-91A0E4A954B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C3119B-70BA-41C4-935F-91A0E4A954B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

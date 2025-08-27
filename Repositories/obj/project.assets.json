@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\beyaz\\source\\repos\\BackyardBox\\Commands\\Commands.csproj",
-      "projectName": "Commands",
-      "projectPath": "C:\\Users\\beyaz\\source\\repos\\BackyardBox\\Commands\\Commands.csproj",
+      "projectUniqueName": "C:\\Users\\beyaz\\source\\repos\\BackyardBox\\Repositories\\Repositories.csproj",
+      "projectName": "Repositories",
+      "projectPath": "C:\\Users\\beyaz\\source\\repos\\BackyardBox\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\beyaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\beyaz\\source\\repos\\BackyardBox\\Commands\\obj\\",
+      "outputPath": "C:\\Users\\beyaz\\source\\repos\\BackyardBox\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

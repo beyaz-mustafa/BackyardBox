@@ -1,6 +1,6 @@
 ﻿using Entities.Models;
 
-namespace Commands.Abstracts
+namespace Repositories.Abstracts
 {
     public interface ISaveCommand : ICommand<Save>
     {

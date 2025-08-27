@@ -1,7 +1,7 @@
-﻿using Commands.Abstracts;
-using Entities.Models;
+﻿using Entities.Models;
+using Repositories.Abstracts;
 
-namespace Commands.Concretes
+namespace Repositories.Concretes
 {
     public class SaveCommand : ISaveCommand
     {

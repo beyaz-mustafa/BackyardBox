@@ -1,4 +1,4 @@
-﻿namespace Commands.Abstracts
+﻿namespace Repositories.Abstracts
 {
     public interface ICommand<T>
     {
