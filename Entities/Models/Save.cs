@@ -1,15 +1,9 @@
 ﻿namespace Entities.Models
 {
-    public class Save
+    public class Save : Entity
     {
-        public Save(string path, Backup backup)
+        public Save()
         {
-            Path = path;
-            Backup = backup;
-            //Id = UniqueIdGeneratorMethod();
         }
-        public string Id { get; set; }
-        public string Path { get; set; }
-        public Backup Backup { get; set; }
     }
 }

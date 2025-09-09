@@ -2,20 +2,16 @@
 
 namespace Entities.Models
 {
-    public class Backup
+    public class Backup : Entity
     {
-        public Backup(string sourcePath, BackupProfile profile)
+        public Backup()
         {
-            //Id = UniqueIdGeneratorMethod();
-            SourcePath = sourcePath;
             Status = BackupStatus.None;
-            Profile = profile;
         }
-        public string Id { get; set; }
-        public string SourcePath { get; set; }
-        public List<string> DestinationPaths { get; set; } = new List<string>();
-        public List<Save> Saves { get; set; } = new List<Save>();
+        public List<string> Contents { get; set; } = new();
+        public List<string> DestinationPaths { get; set; } = new();
+        public List<string> Saves { get; set; } = new();
         public BackupStatus Status { get; set; }
-        public BackupProfile Profile { get; set; }
+        public FileSystemWatcher FileWatcher { get; init; } = new();
     }
 }

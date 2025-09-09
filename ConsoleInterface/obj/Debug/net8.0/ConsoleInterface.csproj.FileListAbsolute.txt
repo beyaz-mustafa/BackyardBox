@@ -1,0 +1,15 @@
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\bin\Debug\net8.0\ConsoleInterface.exe
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\bin\Debug\net8.0\ConsoleInterface.deps.json
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\bin\Debug\net8.0\ConsoleInterface.runtimeconfig.json
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\bin\Debug\net8.0\ConsoleInterface.dll
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\bin\Debug\net8.0\ConsoleInterface.pdb
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.AssemblyInfoInputs.cache
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.AssemblyInfo.cs
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.csproj.CoreCompileInputs.cache
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.sourcelink.json
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.dll
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\refint\ConsoleInterface.dll
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.pdb
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ConsoleInterface.genruntimeconfig.cache
+C:\Users\beyaz\source\repos\BackyardBox\ConsoleInterface\obj\Debug\net8.0\ref\ConsoleInterface.dll

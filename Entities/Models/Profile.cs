@@ -2,18 +2,15 @@
 
 namespace Entities.Models
 {
-    public class BackupProfile
+    public class Profile : Entity
     {
-        public BackupProfile()
+        public Profile()
         {
-            //Id = UniqueIdGeneratorMethod();
             Status = BackupStatus.None;
         }
-
-        public string Id { get; set; }
         public string? Alias { get; set; }
         public int MaxSaves { get; set; }
-        public List<Backup> Backups { get; set; } = new List<Backup>();
+        public List<string> Backups { get; set; } = new();
         public BackupStatus Status { get; set; }
     }
 }
