@@ -2,6 +2,7 @@
 
 namespace Entities.Models
 {
+    // Represents a backup instance containing its data, destinations, and status
     public class Backup : Entity
     {
         public Backup()

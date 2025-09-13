@@ -2,6 +2,7 @@
 
 namespace Entities.Models
 {
+    // Represents a backup profile that contains information about backups
     public class Profile : Entity
     {
         public Profile()
