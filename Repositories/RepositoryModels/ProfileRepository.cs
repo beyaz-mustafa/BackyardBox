@@ -37,12 +37,12 @@ namespace Repositories.RepositoryModels
         }
 
         // Add a new backup to a profile
-        public void AddBackup(Profile profile, IEnumerable<string> contents)
+        public void AddBackup(Profile profile, params object[] args)
         {
             string path = Path.Combine(ProfilesPath, profile.Id, "Backups");
 
             // Create a new backup and add its Id to the profile's Backups list
-            profile.Backups.Add(_backupRepository.Create(path, contents).Id);
+            profile.Backups.Add(_backupRepository.Create(path, args).Id);
 
             // Update profile JSON to reflect the added backup
             Update(profile);

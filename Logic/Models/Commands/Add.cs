@@ -79,7 +79,7 @@ namespace Logic.Models.Commands
                 */
                 case "backup":
                     // Type check for arguments
-                    if (args[1].GetType() != typeof(string) || args[2].GetType() != typeof(IEnumerable) || args[3].GetType() != typeof(IEnumerable))
+                    if (args[1].GetType() != typeof(string) || !(args[2] is IEnumerable) || !(args[3] is IEnumerable))
                     {
                         Error("Something went wrong in logic");
                         return 0;
@@ -105,7 +105,9 @@ namespace Logic.Models.Commands
                     }
 
                     // Add the backup to the profile
-                    profileRepository.AddBackup(profile, (IEnumerable<string>)args[2]);
+                    var contents = new List<string>((IEnumerable<string>)args[2]);
+                    var destinationPaths = new List<string>((IEnumerable<string>)args[2]);
+                    profileRepository.AddBackup(profile, contents, destinationPaths);
 
                     return 0;
             }

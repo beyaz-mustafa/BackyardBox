@@ -15,23 +15,31 @@ namespace Repositories.RepositoryModels
         // Create a new backup and save it as a JSON file
         public override Backup Create(params object[] args)
         {
+            /* Args contains :
+             * args[0] : path (string)
+             * args[1] : contents (List<string>)
+             * args[2] : destination paths (List<string>)             
+             */
             Backup backup = new();
 
             // First argument is the path where the backup folder will be created
             string path = Path.Combine((string)args[0], backup.Id);
 
-            // Remaining arguments are file/folder paths to include in the backup
-            foreach (var item in args.Skip(1))
+            // Initialize backup properties from args
+            backup.Contents = (List<string>)args[1];
+            backup.DestinationPaths = (List<string>)args[2];
+
+            // Add to FileSystemWatcher filters
+            foreach (var item in backup.Contents)
             {
-                backup.Contents.Add((string)item);        // Add to backup contents list
-                backup.FileWatcher.Filters.Add((string)item); // Add to FileSystemWatcher filters
+                backup.FileWatcher.Filters.Add(item);
             }
 
             // Save backup as JSON in its dedicated folder
             CreateJsonFile(backup, path);
             return backup;
         }
-
+        
         // Delete specified backups from a given path
         public void Delete(string path, HashSet<string> backups)
         {
