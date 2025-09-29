@@ -4,12 +4,11 @@ using System.Collections;
 
 namespace Logic.Models.Commands
 {
-    // Command class for adding objects such as backups to profiles
-    public class Add : Command
+    public sealed class Add : BaseCommand
     {
         const string usage = "usage : add <object>, add <object> [options]";
 
-        // Private constructor for singleton pattern
+        #region Constructor
         Add() : base("add", usage)
         {
             // Define supported objects for the "add" command
@@ -18,54 +17,34 @@ namespace Logic.Models.Commands
                 ["backup"] = null // Currently supports adding backups
             };
         }
-
-        // Singleton instance
-        public static Add? Instance;
-
-        // Get the singleton instance of Add
+        #endregion 
+        
+        #region Singleton Pattern
+        static Add? Instance;
         public static Add GetInstance()
         {
             if (Instance == null) Instance = new();
             return Instance;
         }
+        #endregion
 
-        // Execute the command with provided arguments
-        public override object Execute(params object[] args)
+        #region Execute
+        public override void Execute(params object[] args)
         {
             string invalidUsage = "Invalid usage of: add";
 
-            // Check if any arguments were provided
             if (args.Length < 1)
             {
                 Console.WriteLine(invalidUsage);
-                return 0;
+                return;
             }
 
-            // First argument is empty or whitespace
-            if (args[0].GetType() == typeof(string) && string.IsNullOrWhiteSpace((string)args[0]))
-            {
-                Console.WriteLine(invalidUsage);
-                return 0;
-            }
+            var pair = SupportedObjects!.FirstOrDefault(o => o.Key == args[0].ToString());
 
-            // Find the object type from supported objects
-            var pair = SupportedObjects!.FirstOrDefault(o => o.Key == (string)args[0]);
-
-            /* If the user prompts something like this, following statment will work:
-             * 
-             * add <mistype or unknown object>
-             *      pair.key will be null
-             *      
-             * add <object> [mistype or unknown option]
-             *      pair.key not null but, pair.value is null and user prompted something after <object>
-             * 
-             * This works in most prompts beside : add [option]
-             * Later, accepting add [option] (--help etc.) prompt, will lead to implement changes
-             */
             if (pair.Key == null || (pair.Value == null && args.Length > 1))
             {
                 Console.WriteLine(invalidUsage);
-                return 0;
+                return;
             }
 
             switch (pair.Key)
@@ -82,16 +61,16 @@ namespace Logic.Models.Commands
                     if (args[1].GetType() != typeof(string) || !(args[2] is IEnumerable) || !(args[3] is IEnumerable))
                     {
                         Error("Something went wrong in logic");
-                        return 0;
+                        return;
                     }
 
                     // Find the profile by Id or alias
                     ProfileRepository profileRepository = new();
-                    Profile profile = profileRepository.Find(args[1].ToString());
+                    Profile? profile = profileRepository.Find(args[1].ToString()!);
                     if (profile == null)
                     {
                         Console.WriteLine($"There is no profile called {args[1].ToString()}");
-                        return 0;
+                        return;
                     }
 
                     // Check that all source and destination paths exist
@@ -100,7 +79,7 @@ namespace Logic.Models.Commands
                         if (!Path.Exists(item))
                         {
                             Console.WriteLine($"Path doesn't exists : {item}");
-                            return 0;
+                            return;
                         }
                     }
 
@@ -109,10 +88,10 @@ namespace Logic.Models.Commands
                     var destinationPaths = new List<string>((IEnumerable<string>)args[2]);
                     profileRepository.AddBackup(profile, contents, destinationPaths);
 
-                    return 0;
+                    return;
             }
-
-            return 0;
+            return;
         }
+        #endregion
     }
 }

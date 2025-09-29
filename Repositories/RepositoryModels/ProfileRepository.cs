@@ -28,7 +28,7 @@ namespace Repositories.RepositoryModels
         // Delete a profile directory and all its contents
         public void Delete(Profile profile)
         {
-            string dirPath = Directory.GetDirectories(ProfilesPath, profile.Id, SearchOption.TopDirectoryOnly)
+            string? dirPath = Directory.GetDirectories(ProfilesPath, profile.Id, SearchOption.TopDirectoryOnly)
                 .FirstOrDefault();
             if (dirPath != null)
             {
@@ -60,6 +60,26 @@ namespace Repositories.RepositoryModels
             // Delete backup files corresponding to removed backups
             string backupsPath = Path.Combine(ProfilesPath, profile.Id.ToString(), "Backups");
             _backupRepository.Delete(backupsPath, backups);
+        }
+
+        // Return all profiles id
+        public List<string> GetAll()
+        {
+            var directories = Directory.GetDirectories(ProfilesPath, "*", SearchOption.TopDirectoryOnly);
+
+            if (directories.Length < 1) return new();
+
+            List<string> profileIds = new();
+            foreach (var item in directories)
+            {
+                string? id = Directory.GetFiles(item, "*", SearchOption.TopDirectoryOnly).FirstOrDefault();
+                if (!string.IsNullOrEmpty(id))
+                {
+                    profileIds.Add(Path.GetFileNameWithoutExtension(id));
+                }
+            }
+
+            return profileIds;
         }
     }
 }

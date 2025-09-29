@@ -14,6 +14,12 @@
             Directory.CreateDirectory(appPath);
         }
 
+        // Ensure the Profile directory exists
+        public static void ValidateProfileDirectory()
+        {
+            Directory.CreateDirectory(Path.Combine(appPath, "Profiles"));
+        }
+
         // Ensure the user configuration file exists
         public static void ValidateUserConfig()
         {
